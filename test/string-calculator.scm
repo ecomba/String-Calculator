@@ -1,0 +1,15 @@
+(load "src/string-calculator.scm")
+(in-test-group string-calculator
+  (define-each-test
+    (assert-= (str-add " ") 0)
+    (assert-= (str-add "5") 5)
+    (assert-= (str-add "27") 27)
+    (assert-= (str-add "2,3") 5)
+    (assert-= (str-add "15,7") 22)
+    (assert-= (str-add "1,2,3") 6)
+    (assert-= (str-add "500,400,125") 1025)
+    (assert-= (str-add "1\n2") 3)
+    (assert-= (str-add "1\n2,10") 13)
+    (assert-= (str-add "//;1;2;3") 6)
+    (assert-= (str-add "-1,4") 3)
+    ))
